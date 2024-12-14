@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Body Layout */
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="./home.html">LOGO</a>
+                </div>
+                <ul id="menu">
+                    <li><a href="./login.html">Login</a></li>
+                    <li><a href="./register.html">Register</a></li>
+                    <li><a href="./post-job.html">Post Job</a></li>
+                </ul>             
+            </div>
+            <span class="menu-toggle" id="menu-toggle">&#9776;</span>
+            <ul id="mobile-menu" class="mobile-menu">
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./register.html">Register</a></li>
+                <li><a href="./post-job.html">Post Job</a></li>
+            </ul>
+        </nav>
+        <div>
+            Searchbar
+        </div>
+    </header>
+    <section>
+        <aside>Sidebar</aside>
+        <main>Main</main>
+        <aside>Sidebar</aside>
+    </section>
+    <footer-tag>
+        <!-- Footer content here -->
+    </footer-tag>
+    <script src="./components/footer.js"></script>
+    <script>
+        // JavaScript to toggle the menu on mobile
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        //  window.addEventListener('click', ()=>{
+        //      const mobileMenuOpen = mobileMenu.classList.contains('active')
+        //      console.log(mobileMenuOpen)
+        //      if (mobileMenu) {
+        //         mobileMenu.classList.remove("active")
+        //     }
+        //  })
+
+        window.addEventListener('resize', ()=>{
+            mobileMenu.classList.remove("active")
+        })
+    </script>
+</body>
+</html>

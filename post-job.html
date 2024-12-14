@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Job</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            font-size: large;
+        }
+
+        main {
+            margin-inline:auto;
+            max-width: 80%;
+        }
+
+        form {
+            display: grid;
+            gap:1.5rem;
+            margin:auto;
+        }
+
+        select, option {
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .category {
+            width: 100%;
+            padding: 1rem;
+            background:gainsboro;
+        }
+
+        input {
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid gainsboro;
+        }
+
+        input:user-valid {
+            outline-color: greenyellow;
+        }
+
+        input:user-invalid {
+            outline-color: orangered;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        .field {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap:5px;
+            margin-bottom: 1rem;
+        }
+
+        /* .field input, form button {
+            height: 50px;
+            padding-inline: 10px;
+        } */
+
+        @media screen and (max-width:1000px) {
+            body {
+                font-size: medium;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                font-size: small;
+            }
+
+            main {
+                max-width: 100% !important;
+                padding:1rem;
+                
+            }
+
+            form {
+                gap:1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        Nav
+    </nav>
+    <main>
+        <form action="/submit-job" method="POST">
+            <div class="category">
+                <h2>Job Information</h2>
+    
+                <!-- Basic Job Details -->
+                 <div class="field">
+                     <label for="jobTitle">Job Title</label>
+                     <input type="text" id="jobTitle" name="jobTitle" placeholder="e.g., Frontend Developer" required>
+                 </div>
+    
+                 <div class="field">
+                     <label for="jobCategory">Job Category</label>
+                     <select id="jobCategory" name="jobCategory" required>
+                         <option value="">Select Category</option>
+                         <option value="IT">IT</option>
+                         <option value="Finance">Finance</option>
+                         <option value="Healthcare">Healthcare</option>
+                         <option value="Education">Education</option>
+                     </select>
+                 </div>
+    
+                 <div class="field">
+                     <label for="jobType">Job Type</label>
+                     <select id="jobType" name="jobType" required>
+                         <option value="">Select Type</option>
+                         <option value="Full-time">Full-time</option>
+                         <option value="Part-time">Part-time</option>
+                         <option value="Freelance">Freelance</option>
+                         <option value="Internship">Internship</option>
+                     </select>
+                 </div>
+    
+                 <div class="field">
+                     <label for="jobDescription">Job Description</label>
+                     <textarea id="jobDescription" name="jobDescription" rows="4" placeholder="Describe the job role, responsibilities, and tasks..." required></textarea>
+                 </div>
+    
+                 <div class="field">
+                     <label for="jobRequirements">Job Requirements</label>
+                     <textarea id="jobRequirements" name="jobRequirements" rows="4" placeholder="List skills, qualifications, or experience needed..." required></textarea>
+                 </div>
+    
+                 <div class="field">
+                    <label for="locationType">Location Type</label>
+                    <select id="locationType" name="locationType" required>
+                        <option value="">Select Location Type</option>
+                        <option value="On-site">On-site</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Hybrid">Hybrid</option>
+                    </select> 
+                 </div>
+    
+                 <div class="field">
+                     <label for="location">Location (if applicable)</label>
+                     <input type="text" id="location" name="location" placeholder="e.g., New York, NY">
+                 </div>
+    
+                 <div class="field">
+                     <label for="salaryRange">Salary Range</label>
+                     <input type="text" id="salaryRange" name="salaryRange" placeholder="e.g., $60,000 - $80,000/year">
+                 </div>
+    
+                 <div class="field">
+                     <label for="benefits">Benefits and Perks</label>
+                     <textarea id="benefits" name="benefits" rows="3" placeholder="List benefits like health insurance, flexible hours, etc..."></textarea>
+                 </div>
+    
+                 <div class="field">
+                     <label for="applicationDeadline">Application Deadline</label>
+                     <input type="date" id="applicationDeadline" name="applicationDeadline">
+                 </div>
+    
+                 <div class="field">
+                     <label for="applicationInstructions">Application Instructions</label>
+                     <textarea id="applicationInstructions" name="applicationInstructions" rows="3" placeholder="Provide steps for applying (e.g., submit resume via email)..."></textarea>
+                 </div>
+    
+                 <div class="field">
+                     <label for="applicationLink">Application Link or Email</label>
+                     <input type="text" id="applicationLink" name="applicationLink" placeholder="e.g., careers@company.com or application URL">
+                 </div>
+                </div>
+
+            <!-- Company Information -->
+             <div class="category">
+                <h2>Company Information</h2>
+
+                <div class="field">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" placeholder="e.g., Tech Solutions Inc." required>
+                </div>
+   
+                <div class="field">
+                    <label for="companyAbout">About the Company</label>
+                    <textarea id="companyAbout" name="companyAbout" rows="3" placeholder="Write a short description of the company..."></textarea>
+                </div>
+   
+                <div class="field">
+                    <label for="companyWebsite">Company Website</label>
+                    <input type="url" id="companyWebsite" name="companyWebsite" placeholder="e.g., https://www.company.com">
+                </div>
+   
+                <div class="field">
+                    <label for="companyLogo">Company Logo</label>
+                    <input type="file" id="companyLogo" name="companyLogo" accept="image/*">
+                </div>
+            </div>
+
+
+            <!-- Submit Button -->
+            <button type="submit">Post Job</button>
+        </form>
+    </main>
+
+    <footer-tag></footer-tag>
+    <footer>
+
+    </footer>
+    <script src="./js/data.js"></script>
+    <script src="./components/footer.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', ()=> {
+            const professionsSelect = document.getElementById("jobCategory")
+            professionsArray.forEach(profession => {
+            const option = document.createElement('option');
+            option.value = profession.value; 
+            option.textContent = profession.label; 
+            professionsSelect.appendChild(option); 
+        });
+        })
+
+    </script>
+</body>
+</html>

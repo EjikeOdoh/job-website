@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            font-size: large;
+        }
+
+
+        main {
+            max-width: 400px;
+            margin:auto;
+        }
+
+        form {
+            display: grid;
+            gap:1rem;
+            margin:1rem auto;
+        }
+
+        input {
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid gainsboro
+        }
+
+        input:user-valid {
+            outline-color: greenyellow;
+        }
+
+        input:user-invalid {
+            outline-color: orangered;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        .field {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap:5px;
+        }
+
+        .field input, form button {
+            height: 50px;
+        }
+
+        @media screen and (max-width:1000px) {
+            body {
+                font-size: medium;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                font-size: small;
+            }
+
+            main {
+                width: 100%;
+                padding:1rem;
+                
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        Logo
+    </nav>
+    <main>
+        <form>
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" required>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input id="password" type="password" required minlength="8">
+            </div>
+            <div>
+                <input type="checkbox">
+                <label>Remember me</label>
+            </div>
+            <button type="submit">Sign in</button>
+        </form>
+        <div>
+            <a href="./forgot-password.html">Forgot your password?</a>
+            <p>Don't have an account? <a href="register.html">Click here to create one now</a></p>
+        </div>
+
+    </main>
+    <footer>
+        Home
+        <p>Copyright © 2024</p>
+    </footer>
+</body>
+</html>
