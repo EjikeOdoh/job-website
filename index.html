@@ -17,8 +17,6 @@
             grid-template-columns: auto 1fr auto;
         }
 
-
-
     </style>
 </head>
 <body>
@@ -36,7 +34,6 @@
             </div>
             <span class="menu-toggle" id="menu-toggle">&#9776;</span>
             <ul id="mobile-menu" class="mobile-menu">
-                <li><a href="./home.html">Home</a></li>
                 <li><a href="./login.html">Login</a></li>
                 <li><a href="./register.html">Register</a></li>
                 <li><a href="./post-job.html">Post Job</a></li>
@@ -63,14 +60,6 @@
         menuToggle.addEventListener("click", () => {
             mobileMenu.classList.toggle("active");
         });
-
-        //  window.addEventListener('click', ()=>{
-        //      const mobileMenuOpen = mobileMenu.classList.contains('active')
-        //      console.log(mobileMenuOpen)
-        //      if (mobileMenu) {
-        //         mobileMenu.classList.remove("active")
-        //     }
-        //  })
 
         window.addEventListener('resize', ()=>{
             mobileMenu.classList.remove("active")
