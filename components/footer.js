@@ -6,7 +6,6 @@ class Footer extends HTMLElement {
         super();
 
         this.innerHTML = `<footer>
-        <div>Social Menu</div>
         <p>Copyright © ${currentYear}</p>
     </footer>`
     
