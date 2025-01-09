@@ -7,9 +7,65 @@
     <title>Job details</title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        main {
-            margin-top: 5rem;
+
+        h3 {
+            margin-bottom: 10px;
         }
+        main {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .main {
+            display: grid;
+            gap: 2rem;
+        }
+
+        ul {
+           margin-left: 40px;
+        }
+
+        .category {
+            display: grid;
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .category .label {
+            opacity: .5;
+            font-weight: 500;
+        }
+
+        .category value {
+            font-weight: bolder;
+            font-size: 1rem;
+        }
+
+        .card {
+            text-align: center;
+            background-color: #333;
+            padding: 10rem 1rem 5rem;
+            display: grid;
+        }
+
+        .card > * {
+            color:white;
+        }
+
+        .card .btn-container {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .card .btn-container button {
+            width: min-content;
+            text-wrap: nowrap;
+        }
+
     </style>
 </head>
 
@@ -32,9 +88,17 @@
             <li><a href="./post-job.html">Post Job</a></li>
         </ul>
     </nav>
+    <div class="card">
+        <h3>Alerzo Limited | Full time</h3>
+<h1>FRONT END ENGINEER</h1>
+<p>Victoria Island, Nigeria | Postd on 12/12/2024</p>
+<div class="btn-container">
+    <button>I am Interested</button>
+    <button>I am Interested</button>
+</div>
+    </div>
     <main>
-
-        <div>
+        <div class="main">
             <!-- About Company -->
             <section>
                 <h3>
@@ -81,34 +145,34 @@
         <section>
             <h3>Job Information</h3>
             <!-- Deadline -->
-            <div>
-                <p>Deadline</p>
-                <p>12/12/2012</p>
+            <div class="category">
+                <p class="label">Deadline</p>
+                <p class="value">12/12/2012</p>
             </div>
             <!-- Job Type -->
-            <div>
-                <p>Job Type</p>
-                <p>12/12/2012</p>
+            <div class="category">
+                <p class="label">Job Type</p>
+                <p class="value">Fulltime</p>
             </div>
             <!-- Industry -->
-            <div>
-                <p>Industry</p>
-                <p>12/12/2012</p>
+            <div class="category">
+                <p class="label">Industry</p>
+                <p class="value">Software Development</p>
             </div>
             <!-- City -->
-            <div>
-                <p>City</p>
-                <p>12/12/2012</p>
+            <div class="category">
+                <p class="label">City</p>
+                <p class="value">Lagos</p>
             </div>
             <!-- State -->
-            <div>
-                <p>State</p>
-                <p>12/12/2012</p>
+            <div class="category">
+                <p class="label">State</p>
+                <p class="value">Lagos/p>
             </div>
             <!-- Country -->
-            <div>
-                <p>Country</p>
-                <p>12/12/2012</p>
+            <div class="category">
+                <p class="label">Country</p>
+                <p class="value">Nigeria</p>
             </div>
         </section>
     </main>
