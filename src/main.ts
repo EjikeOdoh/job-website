@@ -10,7 +10,7 @@ function toggleFilterSection(event: Event):void {
 window.addEventListener('click', (event: Event):void=>{
     const isFilterOpen: boolean = filterSection.classList.contains('active')
 
-    if (!(event.target as HTMLElement)?.closest('#filter-section')) {
+    if (!(event.target as HTMLElement)!.closest('#filter-section')) {
         if (isFilterOpen) {
             filterSection.classList.remove('active');
         }
