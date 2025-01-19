@@ -1,11 +1,16 @@
 
 const filterSection = document.getElementById('filter-section')!
+const closeFilterBtn = document.getElementById('close-filter-btn') as HTMLButtonElement
 
 function toggleFilterSection(event: Event):void {
-
     event.stopPropagation()
     filterSection.classList.toggle('active')
 }
+
+function closeFilterSection():void {
+    filterSection.classList.remove('active')
+}
+
 
 window.addEventListener('click', (event: Event):void=>{
     const isFilterOpen: boolean = filterSection.classList.contains('active')
@@ -16,3 +21,5 @@ window.addEventListener('click', (event: Event):void=>{
         }
     }
 })
+
+closeFilterBtn.addEventListener('click', closeFilterSection)

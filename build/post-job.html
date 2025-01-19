@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,21 +19,33 @@
 
         form {
             display: grid;
-            gap:1.5rem;
-            margin:auto;
+            gap: 1.5rem;
+            margin: auto;
         }
 
-        select, option {
+        select,
+        option {
             max-width: 100%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
+        section {
+            padding: 1rem;
+            border: #D2D2D2 solid 1px;
+            border-radius: 20px;
+        }
+
+        section h2 {
+            color: var(--accent);
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+
         .category {
             width: 100%;
             padding: 1rem;
-            background:gainsboro;
             display: grid;
             grid-template-columns: 1fr 1fr;
             justify-items: stretch;
@@ -43,7 +56,7 @@
         .field {
             display: grid;
             grid-template-columns: 1fr;
-            gap:5px;
+            gap: 5px;
             margin-bottom: 1rem;
         }
 
@@ -58,6 +71,10 @@
                 font-size: medium;
             }
 
+            .category {
+                padding: 0;
+            }
+
         }
 
         @media screen and (max-width:600px) {
@@ -68,22 +85,23 @@
 
             main {
                 max-width: 100% !important;
-                padding:8rem 1rem 1rem;
-                
+                padding: 8rem 1rem 1rem;
+
             }
 
             form {
-                gap:1rem;
+                gap: 1rem;
             }
 
             .category {
                 grid-template-columns: 1fr;
                 gap: 0.75rem;
+         
             }
         }
-
     </style>
 </head>
+
 <body>
     <nav>
         <div class="navbar">
@@ -94,7 +112,7 @@
                 <li><a href="./login.html">Login</a></li>
                 <li><a href="./register.html">Register</a></li>
                 <li><a href="./post-job.html">Post Job</a></li>
-            </ul>             
+            </ul>
         </div>
         <span class="menu-toggle" id="menu-toggle">&#9776;</span>
         <ul id="mobile-menu" class="mobile-menu">
@@ -106,114 +124,124 @@
     <main>
         <form action="/" method="POST">
             <!-- Job Details -->
-             <section>
-                 <h2>Job Information</h2>
-                 <div class="category">
-                     <!-- Basic Job Details -->
-                      <div class="field">
-                          <label for="jobTitle">Job Title</label>
-                          <input type="text" id="jobTitle" name="jobTitle" placeholder="e.g., Frontend Developer" required>
-                      </div>
-         
-                      <div class="field">
-                          <label for="jobCategory">Job Category</label>
-                          <select id="jobCategory" name="jobCategory" required>
-                              <option value="">Select Category</option>
-                              <option value="IT">IT</option>
-                              <option value="Finance">Finance</option>
-                              <option value="Healthcare">Healthcare</option>
-                              <option value="Education">Education</option>
-                          </select>
-                      </div>
-         
-                      <div class="field">
-                          <label for="jobType">Job Type</label>
-                          <select id="jobType" name="jobType" required>
-                              <option value="">Select Type</option>
-                              <option value="Full-time">Full-time</option>
-                              <option value="Part-time">Part-time</option>
-                              <option value="Freelance">Freelance</option>
-                              <option value="Internship">Internship</option>
-                          </select>
-                      </div>
-         
-                      <div class="field">
-                          <label for="jobDescription">Job Description</label>
-                          <textarea id="jobDescription" name="jobDescription" rows="4" placeholder="Describe the job role, responsibilities, and tasks..." required></textarea>
-                      </div>
-         
-                      <div class="field">
-                          <label for="jobRequirements">Job Requirements</label>
-                          <textarea id="jobRequirements" name="jobRequirements" rows="4" placeholder="List skills, qualifications, or experience needed..." required></textarea>
-                      </div>
-         
-                      <div class="field">
-                         <label for="locationType">Location Type</label>
-                         <select id="locationType" name="locationType" required>
-                             <option value="">Select Location Type</option>
-                             <option value="On-site">On-site</option>
-                             <option value="Remote">Remote</option>
-                             <option value="Hybrid">Hybrid</option>
-                         </select> 
-                      </div>
-         
-                      <div class="field">
-                          <label for="location">Location (if applicable)</label>
-                          <input type="text" id="location" name="location" placeholder="e.g., New York, NY">
-                      </div>
-         
-                      <div class="field">
-                          <label for="salaryRange">Salary Range</label>
-                          <input type="text" id="salaryRange" name="salaryRange" placeholder="e.g., $60,000 - $80,000/year">
-                      </div>
-         
-                      <div class="field">
-                          <label for="benefits">Benefits and Perks</label>
-                          <textarea id="benefits" name="benefits" rows="3" placeholder="List benefits like health insurance, flexible hours, etc..."></textarea>
-                      </div>
-         
-                      <div class="field">
-                          <label for="applicationDeadline">Application Deadline</label>
-                          <input type="date" id="applicationDeadline" name="applicationDeadline">
-                      </div>
-         
-                      <div class="field">
-                          <label for="applicationInstructions">Application Instructions</label>
-                          <textarea id="applicationInstructions" name="applicationInstructions" rows="3" placeholder="Provide steps for applying (e.g., submit resume via email)..."></textarea>
-                      </div>
-         
-                      <div class="field">
-                          <label for="applicationLink">Application Link or Email</label>
-                          <input type="text" id="applicationLink" name="applicationLink" placeholder="e.g., careers@company.com or application URL">
-                      </div>
-                 </div>
-             </section>
+            <section>
+                <h2>Job Information</h2>
+                <div class="category">
+                    <!-- Basic Job Details -->
+                    <div class="field">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" name="jobTitle" placeholder="e.g., Frontend Developer"
+                            required>
+                    </div>
+
+                    <div class="field">
+                        <label for="jobCategory">Job Category</label>
+                        <select id="jobCategory" name="jobCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="IT">IT</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Education">Education</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="jobType">Job Type</label>
+                        <select id="jobType" name="jobType" required>
+                            <option value="">Select Type</option>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                            <option value="Freelance">Freelance</option>
+                            <option value="Internship">Internship</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="jobDescription">Job Description</label>
+                        <textarea id="jobDescription" name="jobDescription" rows="4"
+                            placeholder="Describe the job role, responsibilities, and tasks..." required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="jobRequirements">Job Requirements</label>
+                        <textarea id="jobRequirements" name="jobRequirements" rows="4"
+                            placeholder="List skills, qualifications, or experience needed..." required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="locationType">Location Type</label>
+                        <select id="locationType" name="locationType" required>
+                            <option value="">Select Location Type</option>
+                            <option value="On-site">On-site</option>
+                            <option value="Remote">Remote</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="location">Location (if applicable)</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., New York, NY">
+                    </div>
+
+                    <div class="field">
+                        <label for="salaryRange">Salary Range</label>
+                        <input type="text" id="salaryRange" name="salaryRange"
+                            placeholder="e.g., $60,000 - $80,000/year">
+                    </div>
+
+                    <div class="field">
+                        <label for="benefits">Benefits and Perks</label>
+                        <textarea id="benefits" name="benefits" rows="3"
+                            placeholder="List benefits like health insurance, flexible hours, etc..."></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="applicationDeadline">Application Deadline</label>
+                        <input type="date" id="applicationDeadline" name="applicationDeadline">
+                    </div>
+
+                    <div class="field">
+                        <label for="applicationInstructions">Application Instructions</label>
+                        <textarea id="applicationInstructions" name="applicationInstructions" rows="3"
+                            placeholder="Provide steps for applying (e.g., submit resume via email)..."></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="applicationLink">Application Link or Email</label>
+                        <input type="text" id="applicationLink" name="applicationLink"
+                            placeholder="e.g., careers@company.com or application URL">
+                    </div>
+                </div>
+            </section>
 
             <!-- Company Information -->
-             <section>
-                 <h2>Company Information</h2>
-                 <div class="category">
+            <section>
+                <h2>Company Information</h2>
+                <div class="category">
                     <div class="field">
                         <label for="companyName">Company Name</label>
-                        <input type="text" id="companyName" name="companyName" placeholder="e.g., Tech Solutions Inc." required>
+                        <input type="text" id="companyName" name="companyName" placeholder="e.g., Tech Solutions Inc."
+                            required>
                     </div>
-       
+
                     <div class="field">
                         <label for="companyAbout">About the Company</label>
-                        <textarea id="companyAbout" name="companyAbout" rows="3" placeholder="Write a short description of the company..."></textarea>
+                        <textarea id="companyAbout" name="companyAbout" rows="3"
+                            placeholder="Write a short description of the company..."></textarea>
                     </div>
-       
+
                     <div class="field">
                         <label for="companyWebsite">Company Website</label>
-                        <input type="url" id="companyWebsite" name="companyWebsite" placeholder="e.g., https://www.company.com">
+                        <input type="url" id="companyWebsite" name="companyWebsite"
+                            placeholder="e.g., https://www.company.com">
                     </div>
-       
+
                     <div class="field">
                         <label for="companyLogo">Company Logo</label>
                         <input type="file" id="companyLogo" name="companyLogo" accept="image/*">
                     </div>
                 </div>
-             </section>
+            </section>
 
 
             <!-- Submit Button -->
@@ -222,22 +250,23 @@
     </main>
 
     <footer-tag></footer-tag>
- 
+
     <script src="./js/data.js"></script>
     <script src="./components/footer.js"></script>
     <script src="./js/index.js"></script>
     <script>
 
-        document.addEventListener('DOMContentLoaded', ()=> {
+        document.addEventListener('DOMContentLoaded', () => {
             const professionsSelect = document.getElementById("jobCategory")
             professionsArray.forEach(profession => {
-            const option = document.createElement('option');
-            option.value = profession.value; 
-            option.textContent = profession.label; 
-            professionsSelect.appendChild(option); 
-        });
+                const option = document.createElement('option');
+                option.value = profession.value;
+                option.textContent = profession.label;
+                professionsSelect.appendChild(option);
+            });
         })
 
     </script>
 </body>
+
 </html>

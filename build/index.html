@@ -9,8 +9,10 @@
     <style>
         /* Body Layout */
         body {
+            --backgroundlayer: #FAF7FF;
             display: grid;
             grid-template-rows: auto 1fr;
+            background-color: white;
         }
 
         main {
@@ -21,7 +23,7 @@
 
         section {
             display: grid;
-            grid-template-columns: 400px 1fr;
+            grid-template-columns: 300px 1fr;
             margin-top: 100px;
             padding: 1rem;
             gap: 2rem;
@@ -39,7 +41,12 @@
         }
 
         #filter-btn-container {
-            padding: 1rem;
+            padding: 1rem 0;
+            display: none;
+        }
+
+        #close-filter-btn {
+            display: none;
         }
 
         .job-card {
@@ -48,7 +55,18 @@
             padding: 1rem;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 1rem;
+            border: var(--secondary) solid 1px;
             overflow: hidden;
+            background-color: var(--backgroundlayer);
+            transition: background-color .3s ease;
+        }
+
+        .job-card:hover {
+            background-color: var(--secondary);
+        }
+
+        .job-title {
+            color: var(--accent)
         }
 
         .comp-logo {
@@ -78,8 +96,17 @@
                 left: -100%;
                 padding: 1rem;
                 background-color: white;
-                transition: all 0.3s ease;
-               
+                transition: all 1s ease;
+               height: 100%;
+            }
+
+            #filter-btn-container {
+                display: inline-flex;
+            }
+
+            #close-filter-btn {
+                display: block;
+                margin-bottom: 2rem;
             }
 
             .active {
@@ -136,19 +163,16 @@
                 <li><a href="./post-job.html">Post Job</a></li>
             </ul>
         </nav>
-        <div>
-            Searchbar
-        </div>
+
     </header>
     <section>
         <aside id="filter-section">
+            <button id="close-filter-btn" class="btn-outline">Close</button>
             <!-- Filter form -->
             <form action="/search" method="GET">
                 <!-- Job Filter Form -->
 
-                <h2>Filter Jobs</h2>
                 <div class="category">
-
                     <!-- Job Type -->
                     <div class="field">
                         <label for="filterJobType">Job Type</label>
@@ -203,13 +227,13 @@
                 <button>Search</button>
             </form>
             <div id="filter-btn-container">
-                <button onclick="toggleFilterSection(event)">Filter</button>
+                <button onclick="toggleFilterSection(event)">Tap to open filter options</button>
             </div>
             <main>
                 <div class="job-card">
-                    <div>
+                    <div class="job-card-header">
                         <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small>Time Posted</small>
+                        <small class="job-posted-time">Time Posted</small>
                     </div>
                     <div>
                         <div class="comp-logo"></div>

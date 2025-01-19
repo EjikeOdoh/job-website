@@ -1,3 +1,9 @@
+:root {
+    --primary: #333333;
+    --secondary: #D3EDEE;
+    --accent: #1F898C
+}
+
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -62,11 +68,18 @@ textarea {
 }
 
 button {
-    background-color: aquamarine;
+    background-color: var(--primary);
+    font-weight: bold;
     border: none;
     outline: none;
     padding: 5px 1rem;
     cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent);
 }
 
 footer {
@@ -123,6 +136,7 @@ nav>ul {
     color: white;
     font-size: 24px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .navbar ul {
@@ -139,10 +153,12 @@ nav>ul {
     text-decoration: none;
     padding: 10px;
     display: block;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in;
 }
 
 .navbar a:hover {
-    background-color: #575757;
+    background-color: var(--accent);
 }
 
 /* Mobile menu */
@@ -154,6 +170,7 @@ nav>ul {
     z-index: 10;
 }
 
+
 /* Mobile Menu Styling */
 #mobile-menu {
     display: none;
@@ -163,11 +180,13 @@ nav>ul {
     width: 100%;
     top: 100%;
     left: 0;
-    background-color: black;
+    background-color: var(--primary);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
+
 
 #mobile-menu li {
     margin-bottom: 1rem;
@@ -199,4 +218,17 @@ nav>ul {
         text-align: center;
         width: 100%;
     }
+}
+
+
+.btn-outline {
+    background-color: transparent;
+    border:2px solid var(--accent);
+    border-radius: 10px;
+    color: #333;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent);
+    color: white
 }
