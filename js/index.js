@@ -8,9 +8,8 @@
 
         window.addEventListener('click', (e)=>{
             const mobileMenuOpen = mobileMenu.classList.contains('active')
-            console.log(mobileMenuOpen)
             if (!e.target.matches('.menu-toggle')) {
-                if (mobileMenu) {
+                if (mobileMenuOpen) {
                     mobileMenu.classList.remove("active")
                 }
             }

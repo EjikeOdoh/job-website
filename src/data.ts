@@ -1,5 +1,25 @@
-"use strict";
-const jobList = [
+type Job = {
+    id: string;
+    jobTitle: string;
+    jobCategory: string;
+    jobType: string;
+    jobDescription: string;
+    jobRequirements: string;
+    locationType: string;
+    location?: string;
+    salaryRange?: string;
+    benefits?: string;
+    applicationDeadline?: string;
+    applicationInstructions?: string;
+    applicationLink?: string;
+    companyName: string;
+    companyAbout?: string;
+    companyWebsite?: string;
+    companyLogo?: File;
+};
+
+
+const jobList: Job[] = [
     {
         id: "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
         jobTitle: "Software Engineer",
@@ -133,4 +153,5 @@ const jobList = [
         companyWebsite: "https://www.projectmanagement.com",
         companyLogo: undefined,
     },
-];
+
+]  
