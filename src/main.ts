@@ -2,13 +2,15 @@
 const filterSection = document.getElementById('filter-section')!
 const closeFilterBtn = document.getElementById('close-filter-btn') as HTMLButtonElement
 
-function toggleFilterSection(event: Event):void {
+function openFilterSection(event: Event):void {
     event.stopPropagation()
-    filterSection.classList.toggle('active')
+    filterSection.classList.add('active')
+    document.body.style.overflow = 'hidden'
 }
 
 function closeFilterSection():void {
     filterSection.classList.remove('active')
+    document.body.style.overflow = 'scroll'
 }
 
 
@@ -17,7 +19,7 @@ window.addEventListener('click', (event: Event):void=>{
 
     if (!(event.target as HTMLElement)!.closest('#filter-section')) {
         if (isFilterOpen) {
-            filterSection.classList.remove('active');
+            closeFilterSection()
         }
     }
 })
