@@ -7,10 +7,10 @@
     <title>Job details</title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-
         h3 {
             margin-bottom: 10px;
         }
+
         main {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -23,12 +23,12 @@
             gap: 2rem;
         }
 
-        main > section {
+        main>section {
             min-width: 25rem;
         }
 
         ul {
-           margin-left: 40px;
+            margin-left: 40px;
         }
 
         .category {
@@ -54,8 +54,16 @@
             display: grid;
         }
 
-        .card > * {
-            color:white;
+        .card>* {
+            color: white;
+        }
+
+        .card span {
+            color: white;
+        }
+
+        .card button {
+            color: white;
         }
 
         .card .btn-container {
@@ -70,6 +78,15 @@
             text-wrap: nowrap;
         }
 
+        @media screen and (max-width: 600px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            main>section {
+                min-width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -93,13 +110,13 @@
         </ul>
     </nav>
     <div class="card">
-        <h3>Alerzo Limited | Full time</h3>
-<h1>FRONT END ENGINEER</h1>
-<p>Victoria Island, Nigeria | Postd on 12/12/2024</p>
-<div class="btn-container">
-    <button>I am Interested</button>
-    <button>I am Interested</button>
-</div>
+        <h3><span id="company-name">Alerzo Limited </span>| <span id="job-type">Full time</span></h3>
+        <h1 id="job-title">FRONT END ENGINEER</h1>
+        <p ><span id="job-location">Victoria Island, Nigeria</span> | Posted on <span id="job-date">12/12/2024</span></p>
+        <div class="btn-container">
+            <button class="btn-outline">I am Interested</button>
+            <button class="btn-outline">I am Interested</button>
+        </div>
     </div>
     <main>
         <div class="main">
@@ -108,7 +125,7 @@
                 <h3>
                     About Company
                 </h3>
-                <p>
+                <p id="about-company">
                     Alerzo is a technology and services company digitising Africa's Micro, Small and Medium Enterprises
                     (MSMEs).​
                 </p>
@@ -119,7 +136,7 @@
                 <h3>
                     Job Description
                 </h3>
-                <p>
+                <p id="job-desc">
                     We urgently need to fill the role of mid-level Frontend Engineers within the Banking space:​
                 </p>
                 <ul>
@@ -138,7 +155,6 @@
                     Requirement
                 </h3>
                 <ul>
-
                     <li> Excellent troubleshooting skills.</li>
                     <li>3 years of professional experience as Frontend Engineer.</li>
                     <li>Must have an NYSC exemption/discharge certificate</li>
@@ -183,7 +199,17 @@
     <footer>
         Footer
     </footer>
+    <script src="./js/data.js"></script>
     <script src="./js/index.js"></script>
+
+    <script>
+        const str = window.location.search
+        const param = new URLSearchParams(str)
+        const id = param.get('id')
+
+        const job = jobList.find(job => job.id === id)
+        console.log(job)
+    </script>
 </body>
 
 </html>

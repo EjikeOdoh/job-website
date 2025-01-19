@@ -23,10 +23,9 @@ body {
     margin-inline: auto;
     height: 100svh;
     max-height: min(1000px, 100svh);
-    font-size: large;
+    font-size: 14px;
     position: relative;
 }
-
 
 footer {
     text-align: center;

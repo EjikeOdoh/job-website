@@ -72,12 +72,27 @@
         .time-posted {
             font-style: italic;
         }
+
         .comp-logo {
-            width: 150px;
-            height: 150px;
-            background-color: gainsboro;
+            width: 50px;
+            height: 50px;
             float: left;
             margin-right: 10px;
+        }
+
+        .apply-btn {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: background-color 0.3s ease-out;
+        }
+
+        .apply-btn:hover {
+            background-color: var(--accent);
         }
 
         .field {
@@ -90,6 +105,20 @@
             font-weight: 500;
         }
 
+        .bold-text {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .label {
+            font-weight: 500;
+            opacity: 0.6;
+            
+        }
+
+        .value {
+            font-weight: bold;
+        }
 
 
         @media screen and (max-width:1000px) {
@@ -120,6 +149,9 @@
                 left: 0 !important;
             }
 
+            .apply-btn {
+                background-color: var(--accent);
+            }
         }
 
         @media screen and (max-width:600px) {
@@ -131,15 +163,7 @@
 
             section {
                 margin-top: 50px;
-            }
-
-            section {
                 grid-template-columns: 1fr;
-            }
-
-            .comp-logo {
-                width: 100px;
-                height: 100px;
             }
 
             #search-form {
@@ -237,139 +261,6 @@
                 <button class="btn-outline" onclick="openFilterSection(event)">Tap to open filter options</button>
             </div>
             <main>
-                <div class="job-card">
-                    <div class="job-card-header">
-                        <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small class="job-posted-time">Time Posted</small>
-                    </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, illo
-                            possimus? Commodi, praesentium! Facilis a excepturi et nesciunt sequi rem at porro. Quasi
-                            minima, debitis ducimus labore necessitatibus nobis quas?
-
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore id minima temporibus
-                            consequatur eligendi possimus eveniet dignissimos officiis, reprehenderit quae accusantium
-                            repellat. Eligendi numquam in hic aspernatur dicta perferendis quasi.
-                        </p>
-                    </div>
-                    <button class="apply-btn">Apply</button>
-
-                </div>
-                <div class="job-card">
-                    <div>
-                        <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small>Time Posted</small>
-                    </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, illo
-                            possimus? Commodi, praesentium! Facilis a excepturi et nesciunt sequi rem at porro. Quasi
-                            minima, debitis ducimus labore necessitatibus nobis quas?
-
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore id minima temporibus
-                            consequatur eligendi possimus eveniet dignissimos officiis, reprehenderit quae accusantium
-                            repellat. Eligendi numquam in hic aspernatur dicta perferendis quasi.
-                        </p>
-                    </div>
-                    <a href="job.html" class="apply-btn" type="menu">Apply</a>
-
-                </div>
-                <div class="job-card">
-                    <div>
-                        <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small>Time Posted</small>
-                    </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, illo
-                            possimus? Commodi, praesentium! Facilis a excepturi et nesciunt sequi rem at porro. Quasi
-                            minima, debitis ducimus labore necessitatibus nobis quas?
-
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore id minima temporibus
-                            consequatur eligendi possimus eveniet dignissimos officiis, reprehenderit quae accusantium
-                            repellat. Eligendi numquam in hic aspernatur dicta perferendis quasi.
-                        </p>
-                    </div>
-                    <button class="apply-btn">Apply</button>
-
-                </div>
-                <div class="job-card">
-                    <div>
-                        <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small>Time Posted</small>
-                    </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, illo
-                            possimus? Commodi, praesentium! Facilis a excepturi et nesciunt sequi rem at porro. Quasi
-                            minima, debitis ducimus labore necessitatibus nobis quas?
-
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore id minima temporibus
-                            consequatur eligendi possimus eveniet dignissimos officiis, reprehenderit quae accusantium
-                            repellat. Eligendi numquam in hic aspernatur dicta perferendis quasi.
-                        </p>
-                    </div>
-                    <button class="apply-btn">Apply</button>
-
-                </div>
-                <div class="job-card">
-                    <div>
-                        <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small>Time Posted</small>
-                    </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, illo
-                            possimus? Commodi, praesentium! Facilis a excepturi et nesciunt sequi rem at porro. Quasi
-                            minima, debitis ducimus labore necessitatibus nobis quas?
-
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore id minima temporibus
-                            consequatur eligendi possimus eveniet dignissimos officiis, reprehenderit quae accusantium
-                            repellat. Eligendi numquam in hic aspernatur dicta perferendis quasi.
-                        </p>
-                    </div>
-                    <button class="apply-btn">Apply</button>
-
-                </div>
-                <div class="job-card">
-                    <div>
-                        <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small>Time Posted</small>
-                    </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, illo
-                            possimus? Commodi, praesentium! Facilis a excepturi et nesciunt sequi rem at porro. Quasi
-                            minima, debitis ducimus labore necessitatibus nobis quas?
-
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore id minima temporibus
-                            consequatur eligendi possimus eveniet dignissimos officiis, reprehenderit quae accusantium
-                            repellat. Eligendi numquam in hic aspernatur dicta perferendis quasi.
-                        </p>
-                    </div>
-                    <button class="apply-btn">Apply</button>
-
-                </div>
-                <div class="job-card">
-                    <div>
-                        <h3 class="job-tile">Frontend Developer needed at ABs</h3>
-                        <small>Time Posted</small>
-                    </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, illo
-                            possimus? Commodi, praesentium! Facilis a excepturi et nesciunt sequi rem at porro. Quasi
-                            minima, debitis ducimus labore necessitatibus nobis quas?
-
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore id minima temporibus
-                            consequatur eligendi possimus eveniet dignissimos officiis, reprehenderit quae accusantium
-                            repellat. Eligendi numquam in hic aspernatur dicta perferendis quasi.
-                        </p>
-                    </div>
-                    <button class="apply-btn">Apply</button>
-
-                </div>
             </main>
         </div>
 

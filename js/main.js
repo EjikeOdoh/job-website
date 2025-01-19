@@ -24,21 +24,31 @@ console.log(jobList);
 let jobSection = "";
 document.addEventListener('DOMContentLoaded', () => {
     jobList.forEach(job => {
-        const { jobTitle, companyName, applicationDeadline, jobDescription } = job;
+        const { id, jobTitle, companyName, applicationDeadline, jobDescription, salaryRange, companyLogo } = job;
         jobSection += `
             <div class="job-card">
+                <div>
+                    <div class="comp-logo">
+                    <img src="${companyLogo ? companyLogo : '../assets/logo.png'}" />
+                    </div>        
                     <div>
-                        <h3 class="job-tile">${jobTitle} needed at ${companyName}</h3>
+                        <p><span class="job-title bold-text">${jobTitle}</span> needed at <span class="bold-text">${companyName}</span></p>
                         <small class="time-posted">${applicationDeadline}</small>
                     </div>
-                    <div>
-                        <div class="comp-logo"></div>
-                        <p class="job-desc">${jobDescription}
-                        </p>
-                    </div>
-                    <a href="job.html" class="apply-btn" type="menu">Apply</a>
-
                 </div>
+                 <div>
+                      <p class="label">Description</p>
+                        <p class="job-desc value">${jobDescription}
+                        </p>
+                </div>
+                <div>
+                      <p class="label">Salary</p>
+                        <p class="value">${salaryRange}
+                        </p>
+                </div>
+                    <a href="job.html?id=${id}" class="apply-btn" type="menu">Apply</a>
+
+            </div>
         `;
     });
     mainSection.innerHTML = jobSection;
