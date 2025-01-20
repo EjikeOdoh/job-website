@@ -119,6 +119,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
 
 nav>ul {
@@ -227,6 +228,10 @@ nav>ul {
     }
 }
 
+.img-container {
+    width: 60%;
+    margin-inline: auto;
+}
 
 .btn-outline {
     background-color: transparent;
