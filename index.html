@@ -134,6 +134,7 @@
                 background-color: white;
                 transition: all 1s ease;
                height: 100%;
+               z-index: 10;
             }
 
             #filter-btn-container {
@@ -170,6 +171,10 @@
                 grid-template-columns: 1fr;
                 padding-top: 2rem;
             }
+
+            #filter-section {
+                width: 70%;
+            }
         }
     </style>
 </head>
@@ -179,7 +184,9 @@
         <nav>
             <div class="navbar">
                 <div class="logo">
-                    <a href="./index.html">LOGO</a>
+                    <a href="./index.html">
+                        <img src="./assets/site-logo.png" />
+                    </a>
                 </div>
                 <ul id="menu">
                     <li><a href="./login.html">Login</a></li>

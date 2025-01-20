@@ -28,6 +28,7 @@ closeFilterBtn.addEventListener('click', closeFilterSection)
 console.log(jobList)
 
 let jobSection: string = ""
+let defaultImg: string = '../assets/logo.png'
 
 document.addEventListener('DOMContentLoaded', () => {
     jobList.forEach(job => {
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="job-card">
                 <div>
                     <div class="comp-logo">
-                    <img src="${companyLogo ? companyLogo : '../assets/logo.png'}" />
+                    <img src="${companyLogo ? companyLogo : defaultImg}" />
                     </div>        
                     <div>
                         <p><span class="job-title bold-text">${jobTitle}</span> needed at <span class="bold-text">${companyName}</span></p>
