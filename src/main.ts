@@ -45,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>        
                     <div>
                         <p><span class="job-title bold-text">${jobTitle}</span> needed at <span class="bold-text">${companyName}</span></p>
-                        <small class="time-posted">${applicationDeadline}</small>
+                        <p><span class="label">Posted by</span> - <span class="poster">Admin</span></p>
+                        <p><span class="label">Date Posted</span> - <small class="time-posted">${applicationDeadline}</small></p>
+                        
                     </div>
                 </div>
                  <div>
