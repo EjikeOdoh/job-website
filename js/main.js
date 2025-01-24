@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div>
                     <div class="comp-logo">
                     ${companyLogo ? "<img src='${companyLogo}' />" : defaultImg}
-                
                     </div>        
                     <div>
                         <p><span class="job-title bold-text">${jobTitle}</span> needed at <span class="bold-text">${companyName}</span></p>
