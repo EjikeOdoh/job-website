@@ -2,6 +2,7 @@
 const mainSection = document.querySelector('main');
 const filterSection = document.getElementById('filter-section');
 const closeFilterBtn = document.getElementById('close-filter-btn');
+const subscribeDialog = document.querySelector('dialog');
 function openFilterSection(event) {
     event.stopPropagation();
     filterSection.classList.add('active');
@@ -10,6 +11,12 @@ function openFilterSection(event) {
 function closeFilterSection() {
     filterSection.classList.remove('active');
     document.body.style.overflow = 'scroll';
+}
+function showModal() {
+    subscribeDialog.showModal();
+}
+function closeModal() {
+    subscribeDialog.close();
 }
 window.addEventListener('click', (event) => {
     const isFilterOpen = filterSection.classList.contains('active');
@@ -53,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             </div>
         `;
+        setTimeout(showModal, 2000);
     });
     mainSection.innerHTML = jobSection;
 });

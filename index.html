@@ -100,7 +100,8 @@
             gap: 5px;
         }
 
-        .field label, .label {
+        .field label,
+        .label {
             font-weight: 500;
         }
 
@@ -120,7 +121,7 @@
         }
 
         .poster {
-            padding:1px 5px;
+            padding: 1px 5px;
             border-radius: 2px;
             background-color: var(--secondary);
             font-weight: 500;
@@ -128,6 +129,69 @@
 
         }
 
+        #search-form {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            padding: 1rem;
+            background-color: var(--accent);
+            border-radius: 8px;
+        }
+
+        #search-form>div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        #search-form button:hover {
+            background-color: var(--primary);
+        }
+
+        dialog {
+            margin: auto;
+            padding: 1rem;
+            border: none;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        dialog form {
+            margin-top: 1rem;
+            display: grid;
+            gap: 8px
+        }
+
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+
+        }
+
+        dialog #subBtn {
+            animation: pulse 2s infinite;
+        }
+
+        .btn-div {
+            text-align: right;
+        }
+
+        #closeSubBtn {
+            all: unset;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.98);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
 
         @media screen and (max-width:1000px) {
 
@@ -165,12 +229,16 @@
             .apply-btn {
                 background-color: var(--accent);
             }
+
+            #search-form {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media screen and (max-width:600px) {
 
             body {
-                position:relative;
+                position: relative;
             }
 
             main {
@@ -187,6 +255,11 @@
             #search-form {
                 grid-template-columns: 1fr;
                 padding-top: 2rem;
+                margin-top: 3rem;
+            }
+
+            #search-form>div {
+                grid-template-columns: 1fr;
             }
 
             #filter-section {
@@ -274,10 +347,19 @@
         <div class="main-section">
             <form id="search-form">
                 <div>
-                    <input placeholder="Enter job title">
-                </div>
-                <div>
-                    <input placeholder="Enter location">
+                    <div>
+                        <input placeholder="Enter job title">
+                    </div>
+                    <div>
+                        <select>
+                            <option>Any Specialization</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option>Any Work Level</option>
+                        </select>
+                    </div>
                 </div>
                 <button>Search</button>
             </form>
@@ -289,6 +371,23 @@
         </div>
 
     </section>
+    <dialog>
+        <div class="btn-div">
+            <button id="closeSubBtn" onclick="closeModal()">
+                <img class="icon" src="./assets/close.svg">
+            </button>
+        </div>
+        <div>
+
+            <p>Information is Power! Get new jos in your email.</p>
+            <p> Enter you email below and click subscribe</p>
+            <form>
+                <input name="email">
+                <button id="subBtn">Subscribe</button>
+            </form>
+        </div>
+
+    </dialog>
     <footer>
         <p>Copyright © 2024</p>
     </footer>

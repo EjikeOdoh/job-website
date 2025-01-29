@@ -254,3 +254,8 @@ nav>ul {
     color: var(--accent);
     font-weight: 500;
 }
+
+.icon {
+    width: 32px;
+    height: 32px;
+}

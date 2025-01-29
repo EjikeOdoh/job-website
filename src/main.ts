@@ -1,6 +1,7 @@
 const mainSection = document.querySelector('main')!
 const filterSection = document.getElementById('filter-section')!
 const closeFilterBtn = document.getElementById('close-filter-btn') as HTMLButtonElement
+const subscribeDialog = document.querySelector('dialog')!
 
 function openFilterSection(event: Event): void {
     event.stopPropagation()
@@ -11,6 +12,15 @@ function openFilterSection(event: Event): void {
 function closeFilterSection(): void {
     filterSection.classList.remove('active')
     document.body.style.overflow = 'scroll'
+}
+
+
+function showModal():void {
+    subscribeDialog.showModal()
+}
+
+function closeModal():void {
+    subscribeDialog.close()
 }
 
 
@@ -61,7 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             </div>
         `
+
+        setTimeout(showModal, 2000)
     });
 
     mainSection.innerHTML = jobSection;
 })
+
+
